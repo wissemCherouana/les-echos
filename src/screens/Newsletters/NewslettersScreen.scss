@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900');
+
+$primary-color: #b00005;
+$follow-color: #faec70;
+$neutral-color: #f4f4f4;
+
+.newsletters-screen {
+  *,
+  .ui.button,
+  .ui.header {
+    font-family: 'Source Sans 3';
+  }
+  width: 60%;
+  margin: auto;
+
+  .ui.dropdown {
+    margin-top: 1em;
+  }
+
+  &__header {
+    text-align: center;
+    background-color: $neutral-color;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 2em 0px;
+
+    .ui.header {
+      text-transform: uppercase;
+    }
+  }
+
+  &__site {
+    margin-top: 1em;
+    margin-bottom: 4em;
+    .ui.header {
+      font-weight: bold;
+      text-align: left;
+      font-size: 2em;
+      text-transform: uppercase;
+      font-family: 'Source Sans 3';
+    }
+    .separator {
+      height: 4px;
+      width: 70px;
+      border-radius: 10px;
+      background-color: $primary-color;
+      margin-bottom: 2em;
+    }
+  }
+
+  &__newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .background {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background: #cecece !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1em;
+      .title {
+        text-align: center;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: white;
+        font-family: 'Merriweather';
+        text-shadow: 1px 1px 2px #0000004d;
+        padding: 10px;
+      }
+    }
+    .description {
+      margin-bottom: 1em;
+    }
+    .ui.button {
+      padding: 8px 30px;
+      line-height: 24px;
+      border-radius: 40px;
+      background-color: $primary-color;
+      color: white;
+      &:hover {
+        color: white;
+        background-color: #680003;
+      }
+      &.follow {
+        background-color: $follow-color;
+        color: black;
+        &:hover {
+          background-color: #f5d904;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 75%;
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+    .ui.stackable.grid {
+      > .column.column {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+      }
+    }
+  }
+}
